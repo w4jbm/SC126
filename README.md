@@ -6,9 +6,11 @@ RomBWB comes with a set of tools allowing it to be built under either Windows or
 
 ```
 $ md5sum SCZ180*.*
-ffb0cd2c36a403350b961da292da700e  SCZ180_126_created.rom
-ec9d88a11fc9274e7d31cc1b87710b52  SCZ180_126_original.rom
+ffb0cd2c36a403350b961da292da700e  SCZ180_126_new.rom
+ec9d88a11fc9274e7d31cc1b87710b52  SCZ180_126_orig.rom
 $
 ```
+
+Using `hexdump -C *filename.ext*` I could look at the files and at first glance they seemed largely the same.
 
 I found a quick way to compare the binary results to help understand where the difference was coming from.
