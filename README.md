@@ -8,7 +8,7 @@ RomBWB comes with a set of tools allowing it to be built under either Windows or
 $ md5sum SCZ180*.*
 ffb0cd2c36a403350b961da292da700e  SCZ180_126_new.rom
 ec9d88a11fc9274e7d31cc1b87710b52  SCZ180_126_orig.rom
-$
+$ _
 ```
 
 Using `hexdump -C filename.ext` I could look at the files and at first glance they seemed largely the same.
@@ -16,7 +16,7 @@ Using `hexdump -C filename.ext` I could look at the files and at first glance th
 I found a quick way to compare the binary results to help understand where the difference was coming from by creating hex dumps that could be compared using `diff`.
 
 ```
-$xxd SCZ180_126_new.rom > new.hex
+$ xxd SCZ180_126_new.rom > new.hex
 $ xxd SCZ180_126_orig.rom > orig.hex
 $ diff new.hex orig.hex
 10c10
@@ -27,6 +27,6 @@ $ diff new.hex orig.hex
 < 000032e0: 3032 302d 3038 2d30 3324 5343 3132 3624  020-08-03$SC126$
 ---
 > 000032e0: 3032 302d 3034 2d30 3424 5343 3132 3624  020-04-04$SC126$
-$
+$ _
 ```
 From this, you can see that the date of the original build of the ROM image is April 4th (04-04) while my new build was on August 3rd (08-03). Other than the difference in the build dates, the original ROM image (which, from the documentation) which was built under Windows does match my ROM image built under Linux.
