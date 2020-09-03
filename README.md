@@ -22,6 +22,15 @@ $ED $09   OUT0 (n),C
 
 These are both are said to function as NOPs on the original Z80.
 
+You could also do this with something along the lines of:
+
+```
+LD BC,(n)
+IN A,(C)
+```
+
+where n is the 16-bit port address (for the onboard I/O, this would have the upper 8 bits set to zero).
+
 ## RomWBW
 RomBWB comes with a set of tools allowing it to be built under either Windows or Linux. There was mention that the results would match "byte-by-byte" whichever method was used. When I first did a build under Linux, I compared the MD5SUM of the ROM image originally provided to the one I had generated and found that they were different. Digging a bit deeper, the next day I tried this on a different computer and got yet another MD5SUM for the ROM. I did this using the command:
 
